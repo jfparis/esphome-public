@@ -80,7 +80,7 @@ number:
     initial_value: 60
     min_value: 0
     step: 5
-    max_value: 300
+    max_value: 1200
     unit_of_measurement: s
     entity_category: config
     mode: box
@@ -102,7 +102,7 @@ binary_sensor:
               switch.is_on: mute_when_absent
             then:
               - switch.turn_on: mute
-              - light.turn_off: ledc
+              - light.turn_off: led
     on_press:
       then:
         - if:
@@ -110,4 +110,4 @@ binary_sensor:
               switch.is_on: mute_when_absent
             then:
               - switch.turn_off: mute
-              - light.turn_on: ledc
+              - light.turn_on: led
